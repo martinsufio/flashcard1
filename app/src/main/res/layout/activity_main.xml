@@ -4,29 +4,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="20dp"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/question1"
-        android:layout_width="match_parent"
+        android:layout_width="375dp"
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:text="When was Nigeria's independence?"
+        android:text="When is Nigerian's independence?"
+        android:background="@drawable/card_background"
+        android:textColor="@color/black"
         android:textSize="40sp"
         android:gravity="center"
+        android:elevation="5dp"
         />
 
     <TextView
         android:id="@+id/answer1"
-        android:layout_width="match_parent"
+        android:layout_width="375dp"
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
         android:text="1960"
+        android:textColor="#474848"
+        android:background="@drawable/answer_background"
         android:textSize="40sp"
         android:gravity="center"
         android:visibility="invisible"
 
         />
+    <TextView
+        android:id="@+id/answer2"
+        android:layout_below="@+id/question1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="1950"
+        android:textColor="@color/black"
+        android:background="#0566FA"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:visibility="invisible"
+
+
+        />
+    <TextView
+        android:id="@+id/answer3"
+        android:layout_below="@+id/answer2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="1960"
+        android:textColor="@color/black"
+        android:background="#0566FA"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:visibility="invisible"
+
+
+
+        />
+
+    <TextView
+        android:id="@+id/answer4"
+        android:layout_below="@+id/answer3"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="1970"
+        android:textColor="@color/black"
+        android:background="#0566FA"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:visibility="invisible"
+
+
+        />
+
+    <TextView
+        android:id="@+id/answer5"
+        android:layout_below="@+id/answer4"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="1980"
+        android:textColor="@color/black"
+        android:background="#0566FA"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:visibility="invisible"
+        />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/answerNotShowing"
+        android:src="@drawable/eyeclosed"
+        android:layout_below="@+id/answer5"
+        android:layout_marginTop="250dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible"
+
+        />
+
+
+
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/answerShowing"
+        android:src="@drawable/eyeicon"
+        android:layout_below="@+id/answer5"
+        android:layout_marginTop="250dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+
+        />
+
+
 
 
 </RelativeLayout>
