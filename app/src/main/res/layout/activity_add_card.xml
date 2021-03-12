@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addCard">
+
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/dismissButton"
+        android:src="@drawable/dismissbutton"
+        android:layout_below="@+id/answer5"
+        android:layout_marginTop="650dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:visibility="visible"
+
+        />
+
+    <EditText
+        android:id="@+id/editQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="20dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:hint="Write your question"
+        android:layout_centerHorizontal="true"
+
+        />
+
+    <EditText
+        android:id="@+id/editAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="80dp"
+        android:inputType="textMultiLine"
+        android:hint="Write your answer"
+
+        />
+
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/saveButton"
+        android:src="@drawable/ic_iconmonstr_download_9"
+        android:layout_below="@+id/answer5"
+        android:layout_marginTop="650dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentLeft="true"
+        android:visibility="visible"
+
+        />
+
+</RelativeLayout>
