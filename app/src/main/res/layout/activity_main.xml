@@ -138,6 +138,18 @@
         android:visibility="visible"
 
         />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/editButton"
+        android:src="@drawable/editbutton"
+        android:layout_below="@+id/answer5"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentLeft="true"
+        android:visibility="visible"
+
+        />
 
 
 
