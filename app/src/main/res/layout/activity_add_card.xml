@@ -41,6 +41,48 @@
         android:hint="Write your answer"
 
         />
+    <EditText
+        android:id="@+id/editAnswer2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:inputType="textMultiLine"
+        android:hint="Write wrong answer"
+        android:layout_below="@+id/editAnswer"
+        />
+    <EditText
+        android:id="@+id/editAnswer3"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:inputType="textMultiLine"
+        android:hint="Write correct answer"
+        android:layout_below="@+id/editAnswer2"
+        />
+    <EditText
+        android:id="@+id/editAnswer4"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:inputType="textMultiLine"
+        android:hint="Write wrong answer"
+        android:layout_below="@+id/editAnswer3"
+        />
+    <EditText
+        android:id="@+id/editAnswer5"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:inputType="textMultiLine"
+        android:hint="Write wrong answer"
+        android:layout_below="@+id/editAnswer4"
+        />
+
+
 
 
     <ImageView
