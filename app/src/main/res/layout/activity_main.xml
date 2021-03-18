@@ -12,7 +12,7 @@
         android:layout_width="375dp"
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:text="When is Nigerian's independence?"
+        android:text="When is Nigerian's Independence?"
         android:background="@drawable/card_background"
         android:textColor="@color/black"
         android:textSize="40sp"
@@ -138,6 +138,7 @@
         android:visibility="visible"
 
         />
+
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -147,6 +148,19 @@
         android:layout_marginTop="250dp"
         android:layout_marginLeft="20dp"
         android:layout_alignParentLeft="true"
+        android:visibility="visible"
+
+        />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/nextButton"
+        android:src="@drawable/nextbutton"
+        android:layout_below="@+id/answer5"
+        android:layout_marginTop="170dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
         android:visibility="visible"
 
         />
