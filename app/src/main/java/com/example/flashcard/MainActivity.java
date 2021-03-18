@@ -10,25 +10,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     FlashcardDatabase flashcardDatabase;
     List<Flashcard> allFlashcards;
+    int currentCardDisplayedIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        flashcardDatabase = new FlashcardDatabase(getApplicationContext());
-        allFlashcards = flashcardDatabase.getAllCards();
 
-        if (allFlashcards != null && allFlashcards.size() > 0) {
-            ((TextView) findViewById(R.id.question1)).setText(allFlashcards.get(0).getQuestion());
-            ((TextView) findViewById(R.id.answer1)).setText(allFlashcards.get(0).getAnswer());
-        }
 
 
         TextView flashcardquestion1 = findViewById(R.id.question1);
@@ -41,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView answerShowing = findViewById(R.id.answerShowing);
         ImageView addCard = findViewById(R.id.addCard);
         ImageView editButton = findViewById(R.id.editButton);
+        ImageView nextButton = findViewById(R.id.nextButton);
 
 
         flashcardquestion1.setOnClickListener(new View.OnClickListener() {
@@ -172,6 +171,37 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // advance our pointer index so we can show the next card
+                if (allFlashcards.size() == 0)
+                    return;
+                currentCardDisplayedIndex++;
+                // make sure we don't get an IndexOutOfBoundsError if we are viewing the last indexed card in our list
+                if(currentCardDisplayedIndex==allFlashcards.size()){
+                    Toast.makeText(getApplicationContext(), "You've reached the end of the cards, going back to start.", Toast.LENGTH_SHORT).show();
+                    currentCardDisplayedIndex=0;
+                }
+
+                // set the question and answer TextViews with data from the database
+                allFlashcards = flashcardDatabase.getAllCards();
+                Flashcard flashcard = allFlashcards.get(currentCardDisplayedIndex);
+                
+                ((TextView) findViewById(R.id.question1)).setText(flashcard.getQuestion());
+                ((TextView) findViewById(R.id.answer1)).setText(flashcard.getAnswer());
+            }
+        });
+
+
+        flashcardDatabase = new FlashcardDatabase(getApplicationContext());
+        allFlashcards = flashcardDatabase.getAllCards();
+
+        if (allFlashcards != null && allFlashcards.size() > 0) {
+            ((TextView) findViewById(R.id.question1)).setText(allFlashcards.get(0).getQuestion());
+            ((TextView) findViewById(R.id.answer1)).setText(allFlashcards.get(0).getAnswer());
+        }
 
 
 
