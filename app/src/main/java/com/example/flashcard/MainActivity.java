@@ -11,14 +11,24 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+    FlashcardDatabase flashcardDatabase;
+    List<Flashcard> allFlashcards;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        flashcardDatabase = new FlashcardDatabase(getApplicationContext());
+        allFlashcards = flashcardDatabase.getAllCards();
 
+        if (allFlashcards != null && allFlashcards.size() > 0) {
+            ((TextView) findViewById(R.id.question1)).setText(allFlashcards.get(0).getQuestion());
+            ((TextView) findViewById(R.id.answer1)).setText(allFlashcards.get(0).getAnswer());
+        }
 
 
         TextView flashcardquestion1 = findViewById(R.id.question1);
@@ -164,6 +174,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
     }
 
 
@@ -185,6 +197,11 @@ public class MainActivity extends AppCompatActivity {
             ((TextView)findViewById(R.id.answer3)).setText(string4);
             ((TextView)findViewById(R.id.answer4)).setText(string5);
             ((TextView)findViewById(R.id.answer5)).setText(string6);
+
+            flashcardDatabase.insertCard(new Flashcard(string1,string2));
+            allFlashcards = flashcardDatabase.getAllCards();
         }
+
+
     }
 }
