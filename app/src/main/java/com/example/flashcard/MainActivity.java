@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView addCard = findViewById(R.id.addCard);
         ImageView editButton = findViewById(R.id.editButton);
         ImageView nextButton = findViewById(R.id.nextButton);
+        ImageView deleteButton = findViewById(R.id.deleteButton);
 
 
         flashcardquestion1.setOnClickListener(new View.OnClickListener() {
@@ -142,6 +143,8 @@ public class MainActivity extends AppCompatActivity {
                 answerNotShowing.setVisibility(View.VISIBLE);
                 Intent intent = new Intent(MainActivity.this, addCard.class);
                 MainActivity.this.startActivityForResult(intent, 100);
+                currentCardDisplayedIndex = allFlashcards.size();
+
             }
         });
 
@@ -168,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("stringKey5", ((TextView) findViewById(R.id.answer4)).getText().toString());
                 intent.putExtra("stringKey6", ((TextView) findViewById(R.id.answer5)).getText().toString());
                 MainActivity.this.startActivityForResult(intent, 100);
+                flashcardDatabase.deleteCard(((TextView) findViewById(R.id.question1)).getText().toString());
 
             }
         });
@@ -202,6 +206,27 @@ public class MainActivity extends AppCompatActivity {
             ((TextView) findViewById(R.id.question1)).setText(allFlashcards.get(0).getQuestion());
             ((TextView) findViewById(R.id.answer1)).setText(allFlashcards.get(0).getAnswer());
         }
+
+
+
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flashcardDatabase.deleteCard(((TextView) findViewById(R.id.question1)).getText().toString());
+                ((TextView) findViewById(R.id.question1)).setText(allFlashcards.get(currentCardDisplayedIndex-1).getQuestion());
+                ((TextView) findViewById(R.id.answer1)).setText(allFlashcards.get(currentCardDisplayedIndex-1).getAnswer());
+                allFlashcards = flashcardDatabase.getAllCards();
+            }
+        });
+
+
+
+
+
+
+
+
 
 
 
