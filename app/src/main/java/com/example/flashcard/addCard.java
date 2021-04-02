@@ -41,7 +41,9 @@ public class addCard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+                overridePendingTransition(R.anim.right2_in,R.anim.left2_out);
             }
+
         });
 
 
@@ -71,6 +73,7 @@ public class addCard extends AppCompatActivity {
                     finish(); // closes this activity and pass data to the original activity that launched this activity
 
                 }
+                overridePendingTransition(R.anim.down_out, R.anim.down_in);
 
             }
         });
