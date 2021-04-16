@@ -1,14 +1,12 @@
 ## Lab 4
 
 ### App Description
-`TODO://` Add app description
 
 ### App Walk-though
 
 
 <img src="https://github.com/stillflow/flashcard1/blob/main/flashcardapp(4).gif" width=200><br>
 
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
 
 ## Required
 - [x] User sees a transition animation when going from the main screen to the add card screen.
@@ -37,7 +35,6 @@
 ## Lab 2
 
 ### App Description
-`TODO://` Add app description
 
 
 
